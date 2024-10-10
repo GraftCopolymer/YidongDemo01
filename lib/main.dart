@@ -65,8 +65,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Scaffold是页面骨架
     return Scaffold(
+      // 标题栏
       appBar: AppBar(
+        // 标题栏的标题属性，可以接收一个Widget
         title: Row(
           children: [
             Icon(Icons.favorite, color: Colors.red,),
@@ -79,14 +82,18 @@ class MyApp extends StatelessWidget {
             )
           ],
         ),
+        // 设置标题栏颜色，颜色从我们设置的主题配色方案中生成
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      // 页面主体
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        // SingleChildScrollView的子组件超出屏幕时可以为其提供滚动功能
         child: SingleChildScrollView(
           child: Column(
             children: [
+              // Ctrl + 鼠标左键 查看DemoCard的定义
               DemoCard(
                 cardTitle: "Column 演示",
                 children: [
@@ -176,6 +183,32 @@ class MyApp extends StatelessWidget {
                       ));
                     }, 
                     child: Text("黑色卡片")
+                  ),
+                ]
+              ),
+              DemoCard(
+                cardTitle: "各种不同的 Button 演示", 
+                children: [
+                  ElevatedButton(
+                    onPressed: (){
+                      // 在控制台打印 Hello ElevatedButton
+                      debugPrint("Hello ElevatedButton");
+                    }, 
+                    child: Text("ElevatedButton")
+                  ),
+                  TextButton(
+                    onPressed: (){
+                      // 在控制台打印 Hello TextButton
+                      debugPrint("Hello TextButton");
+                    }, 
+                    child: Text("TextButton")
+                  ),
+                  IconButton(
+                    onPressed: (){
+                      // 在控制台打印 Hello IconButton
+                      debugPrint("Hello IconButton");
+                    }, 
+                    icon: Icon(Icons.favorite_border),
                   ),
                 ]
               )

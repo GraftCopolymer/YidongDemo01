@@ -23,6 +23,7 @@ class ColumnBasePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
+          // 将容器的长宽均设置为无穷大，这会使其填满屏幕（大小为屏幕大小）
           width: double.infinity,
           height: double.infinity,
           child: Column(

@@ -13,15 +13,24 @@ class NiceCard extends StatelessWidget {
     return Container(
       width: 240,
       height: 100,
+      // 内容居中对齐
       alignment: Alignment.center,
+      // 设置一定的内边距
       padding: EdgeInsets.all(8),
+      // 容器的装饰
       decoration: BoxDecoration(
+        // 背景色为黑色
         color: Colors.black,
+        // 设置边框半径（圆角边框）
         borderRadius: BorderRadius.all(Radius.circular(20)),
+        // 外部阴影，可以添加多个阴影，直接写在数组中即可
         boxShadow: [
           BoxShadow(
+            // 阴影颜色
             color: Colors.grey,
+            // 模糊半径
             blurRadius: 20,
+            // 阴影偏移
             offset: Offset(10, 10)
           )
         ]
